@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="order by dede58.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Alpha - Bootstrap Admin Template</title>
+
+
+    <link th:href="@{/emp/css/style.default.css}" rel="stylesheet">
+    <link th:href="@{/emp/css/morris.css}" rel="stylesheet">
+    <link th:href="@{/emp/css/select2.css}" rel="stylesheet" >
+    <link th:href="@{/emp/css/style.css}" rel="stylesheet">
+    <link th:href="@{/emp/css/style.calendar.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<header>
+    <div class="headerwrapper">
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <img src="picture/logo.png" alt="" />
+            </a>
+            <div class="pull-right">
+                <a href="#" class="menu-collapse">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div><!-- header-left -->
+        <div class="header-right">
+            <div class="pull-right">
+                <form class="form form-search" action="search-results.html">
+                    <input type="search" class="form-control" placeholder="Search" />
+                </form>
+                <div class="btn-group btn-group-list btn-group-notification">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="badge">5</span>
+                    </button>
+                    <div class="dropdown-menu pull-right">
+                        <a href="#" class="link-right"><i class="fa fa-search"></i></a>
+                        <h5>通知</h5>
+                        <ul class="media-list dropdown-list">
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user1.png" alt="">
+                                <div class="media-body">
+                                    <strong>Nusja Nawancali</strong> likes a photo of you
+                                    <small class="date"><i class="fa fa-thumbs-up"></i> 15 minutes ago</small>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user2.png" alt="">
+                                <div class="media-body">
+                                    <strong>Weno Carasbong</strong> shared a photo of you in your <strong>Mobile Uploads</strong> album.
+                                    <small class="date"><i class="fa fa-calendar"></i> July 04, 2014</small>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user3.png" alt="">
+                                <div class="media-body">
+                                    <strong>Venro Leonga</strong> likes a photo of you
+                                    <small class="date"><i class="fa fa-thumbs-up"></i> July 03, 2014</small>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user4.png" alt="">
+                                <div class="media-body">
+                                    <strong>Nanterey Reslaba</strong> shared a photo of you in your <strong>Mobile Uploads</strong> album.
+                                    <small class="date"><i class="fa fa-calendar"></i> July 03, 2014</small>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user1.png" alt="">
+                                <div class="media-body">
+                                    <strong>Nusja Nawancali</strong> shared a photo of you in your <strong>Mobile Uploads</strong> album.
+                                    <small class="date"><i class="fa fa-calendar"></i> July 02, 2014</small>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="dropdown-footer text-center">
+                            <a href="#" class="link">查看所有通知</a>
+                        </div>
+                    </div><!-- dropdown-menu -->
+                </div><!-- btn-group -->
+
+                <div class="btn-group btn-group-list btn-group-messages">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge">2</span>
+                    </button>
+                    <div class="dropdown-menu pull-right">
+                        <a href="#" class="link-right"><i class="fa fa-plus"></i></a>
+                        <h5>新消息</h5>
+                        <ul class="media-list dropdown-list">
+                            <li class="media">
+                                <span class="badge badge-success">New</span>
+                                <img class="img-circle pull-left noti-thumb" src="picture/user1.png" alt="">
+                                <div class="media-body">
+                                    <strong>Nusja Nawancali</strong>
+                                    <p>Hi! How are you?...</p>
+                                    <small class="date"><i class="fa fa-clock-o"></i> 15 minutes ago</small>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <span class="badge badge-success">New</span>
+                                <img class="img-circle pull-left noti-thumb" src="picture/user2.png" alt="">
+                                <div class="media-body">
+                                    <strong>Weno Carasbong</strong>
+                                    <p>Lorem ipsum dolor sit amet...</p>
+                                    <small class="date"><i class="fa fa-clock-o"></i> July 04, 2014</small>
+                                </div>
+                            </li>
+                            <a href="#" class="link-right"><i class="fa fa-plus"></i></a>
+                            <h5>已查看的消息</h5>
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user4.png" alt="">
+                                <div class="media-body">
+                                    <strong>Nanterey Reslaba</strong>
+                                    <p>It might seem crazy what I'm about to say...</p>
+                                    <small class="date"><i class="fa fa-clock-o"></i> July 03, 2014</small>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img class="img-circle pull-left noti-thumb" src="picture/user1.png" alt="">
+                                <div class="media-body">
+                                    <strong>Nusja Nawancali</strong>
+                                    <p>Hey I just met you and this is crazy...</p>
+                                    <small class="date"><i class="fa fa-clock-o"></i> July 02, 2014</small>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="dropdown-footer text-center">
+                            <a href="#" class="link">查看所有消息</a>
+                        </div>
+                    </div><!-- dropdown-menu -->
+                </div><!-- btn-group -->
+
+                <div class="btn-group btn-group-option">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <img class="img-circle avatar-img" alt="" th:src="@{/emp/picture/profile.png}">
+                        <span class="user-name">Jason 周</span>
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a th:href="@{/selectper}"><i class="glyphicon glyphicon-user"></i> 我的信息</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-star"></i> 重要事项</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-cog"></i> 设置</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> 帮助</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>登出</a></li>
+                    </ul>
+                </div><!-- btn-group -->
+
+            </div><!-- pull-right -->
+
+        </div><!-- header-right -->
+
+    </div><!-- headerwrapper -->
+</header>
+
+<section>
+    <div class="mainwrapper">
+        <div class="leftpanel">
+            <div class="media profile-left">
+                <a class="pull-left profile-thumb" href="profile.html">
+                    <img class="img-circle" th:src="@{/emp/picture/profile.png}" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Jason 周</h4>
+                    <span class="user-options"><a href="#"><i class="glyphicon glyphicon-user"></i></a>
+                              <a href="#"><i class="glyphicon glyphicon-envelope"></i></a>
+                              <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                              <a href="#"><i class="glyphicon glyphicon-log-out"></i></a>
+							</span>
+                </div>
+            </div><!-- media -->
+
+
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>个人主页</span></a></li>
+                <li><a th:href="@{/message/messages_list}"><span class="pull-right badge">5</span><i class="fa fa-envelope-o"></i><span>信箱</span></a></li>
+                <li><a th:href="@{/richenganpai}"><i class="fa fa-bar-chart-o"></i> <span>日程安排</span></a></li>
+                <li><a th:href="@{/Metting/showMetting}"><i class="fa fa-bar-chart-o"></i> <span>会议管理</span></a></li>
+                <li class="parent"><a href="#"><i class="fa fa-suitcase"></i> <span>个人文件夹</span></a>
+                    <ul class="children">
+                        <li><a th:href="@{/wenjianjia}">个人文件夹</a></li>
+                    </ul>
+                </li>
+                <li class="parent"><a href="#"><i class="fa fa-edit"></i> <span>名片夹*</span></a>
+                </li>
+                <li class="parent"><a href="#"><i class="fa fa-bars"></i> <span>公司通讯录</span></a>
+                    <ul class="children">
+                        <li><a th:href="@{/mailselect}">销售部</a></li>
+                    </ul>
+                </li>
+                <li class="parent"><a href="#"><i class="fa fa-file-text"></i> <span>待办事项*</span></a>
+                    <ul class="children">
+                        <li><a th:href="@{/daibanshi}">Blank Page</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div><!-- leftpanel -->
+
+        <!-- 4板-->
+        <div class="mainpanel">
+            <div class="contentpanel">
+                <div class="row row-stat">
+                    <div class="col-md-3">
+                        <div class="panel noborder">
+                            <div class="panel-heading noborder">
+                                <div class="panel-btns">
+                                    <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                </div><!-- panel-btns -->
+                                <div class="panel-icon icon-user"><i class="fa fa-user"></i></div>
+                                <div class="media-body">
+                                    <h1 class="mt5">630</h1>
+                                    <h5 class="md-title nomargin">在线人数</h5>
+                                </div><!-- media-body -->
+                            </div><!-- panel-body -->
+                        </div><!-- panel -->
+                    </div><!-- col-md-3 -->
+
+                    <div class="col-md-3">
+                        <div class="panel noborder">
+                            <div class="panel-heading noborder">
+                                <div class="panel-btns">
+                                    <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                </div><!-- panel-btns -->
+                                <div class="panel-icon icon-globe"><i class="fa fa-globe"></i></div>
+                                <div class="media-body">
+                                    <h1 class="mt5">16</h1>
+                                    <h5 class="md-title nomargin">留言板</h5>
+                                </div><!-- media-body -->
+                            </div><!-- panel-body -->
+                        </div><!-- panel -->
+                    </div><!-- col-md-3 -->
+
+                    <div class="col-md-3">
+                        <div class="panel noborder">
+                            <div class="panel-heading noborder">
+                                <div class="panel-btns">
+                                    <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                </div><!-- panel-btns -->
+                                <div class="panel-icon icon-envelope"><i class="fa fa-envelope"></i></div>
+                                <div class="media-body">
+                                    <h1 class="mt5">6</h1>
+                                    <h5 class="md-title nomargin">留言板</h5>
+                                </div><!-- media-body -->
+                            </div><!-- panel-body -->
+                        </div><!-- panel -->
+                    </div><!-- col-md-3 -->
+
+                    <div class="col-md-3">
+                        <div class="panel noborder">
+                            <div class="panel-heading noborder">
+                                <div class="panel-btns">
+                                    <a href="#" class="panel-close tooltips" data-toggle="tooltip" title="Close Panel"><i class="fa fa-times"></i></a>
+                                </div><!-- panel-btns -->
+                                <div class="panel-icon icon-gavel"><i class="fa fa-gavel"></i></div>
+                                <div class="media-body">
+                                    <h1 class="mt5">7</h1>
+                                    <h5 class="md-title nomargin">待办</h5>
+                                </div><!-- media-body -->
+                            </div><!-- panel-body -->
+                        </div><!-- panel -->
+                    </div><!-- col-md-3 -->
+                </div><!-- row -->
+
+                <!--天气预报-->
+                <div class="row">
+                    <div class="col-md-8">
+                        <section class="panel panel-default">
+                            <div class="panel-body weather-row">
+                                <img th:src="@{/emp/picture/weather_image.jpg}" height="243" alt="">
+                                <div class="weather-head">
+                                    天气预报
+                                </div>
+                                <div class="form-group country-select">
+                                    <select class="width100p" data-placeholder="中 国">
+                                        <option value="">中国</option>
+                                        <option value="">东京</option>
+                                        <option value="">纽约</option>
+                                        <option value="">伦敦</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row weather-full-info">
+                                    <div class="col-md-3 today-status">
+                                        <h1>今天</h1>
+                                        <span class="wi wi-day-cloudy"></span>
+                                        <div class="degree">37</div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <ul>
+                                            <li>
+                                                <h2>明天</h2>
+                                                <span class="wi wi-day-cloudy text-primary"></span>
+                                                <div class="statistics">32</div>
+                                            </li>
+                                            <li>
+                                                <h2>星期一</h2>
+                                                <span class="wi wi-day-cloudy text-danger"></span>
+                                                <div class="statistics">40</div>
+                                            </li>
+                                            <li>
+                                                <h2>星期二</h2>
+                                                <span class="wi wi-day-cloudy text-info"></span>
+                                                <div class="statistics">25</div>
+                                            </li>
+                                            <li>
+                                                <h2>星期三</h2>
+                                                <span class="wi wi-day-cloudy text-success"></span>
+                                                <div class="statistics">37</div>
+                                            </li>
+                                            <li>
+                                                <h2>星期四</h2>
+                                                <span class="wi wi-day-cloudy text-warning"></span>
+                                                <div class="statistics">15</div>
+                                            </li>
+                                            <li>
+                                                <h2>星期五</h2>
+                                                <span class="wi wi-day-cloudy"></span>
+                                                <div class="statistics">21</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!--时间获取-->
+                    <script type="text/javascript">
+                        window.onload=function()
+                        {
+                            window.requestAnimationFrame(getDate)
+                        }
+                        function getDate()
+                        {
+                            window.setTimeout(function(){
+                                window.requestAnimationFrame(getDate)
+                            },1000/2)
+                            var d=new Date();
+                            var year=d.getFullYear()  //获取年
+                            var month=d.getMonth()+1;  //获取月，从 Date 对象返回月份 (0 ~ 11)，故在此处+1
+                            var day=d.getDay()    //获取日
+                            var days=d.getDate() //获取日期
+                            var hour=d.getHours()   //获取小时
+                            var minute=d.getMinutes()  //获取分钟
+                            var second=d.getSeconds()   //获取秒
+
+                            if(month<10) month="0"+month
+                            if(days<10) days="0"+days
+                            if(hour<10) hour="0"+hour
+                            if(minute<10) minute="0"+minute
+                            if(second<10) second="0"+second
+
+                            var week=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六")
+                            var Tools=document.getElementById("main-time")
+                            var da=year+" 年 "+month+" 月 "+days+" 日 "+week[day]+" "+hour+" : "+minute+" :"+second
+                            Tools.innerHTML=da
+                        }
+                    </script>
+                    <div class="col-md-4">
+                        <section class="panel panel-default">
+                            <div class="clock-panel">
+                                <div id="main-time"></div>
+                                <p class="text-left"></p>
+                                <p class="text-left"></p>
+                            </div>
+                            <ul id="clock">
+                                <li id="sec"></li>
+                                <li id="hour"></li>
+                                <li id="min"></li>
+                            </ul>
+
+                            <ul class="clock-category">
+                                <li>
+                                    <a href="#" class="active">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>时间</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>秒表</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>提醒</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>计时器</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+
+                <!--待办事项 -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="panel panel-primary-head widget-todo">
+                            <div class="panel-heading">
+                                <div class="pull-right">
+                                    <a title="" data-toggle="tooltip" class="tooltips mr5" href="#" data-original-title="Settings"><i class="glyphicon glyphicon-cog"></i></a>
+                                    <a title="" data-toggle="tooltip" class="tooltips" id="addnewtodo" href="#" data-original-title="Add New"><i class="glyphicon glyphicon-plus"></i></a>
+                                </div><!-- panel-btns -->
+                                <h3 class="panel-title">待办事项</h3>
+                            </div>
+                            <ul class="panel-body list-group nopadding">
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" id="washcar" value="1">
+                                        <label for="washcar">吃饭</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" checked="checked" id="eatpizza" value="1">
+                                        <label for="eatpizza">睡觉</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" checked="checked" id="washdish" value="1">
+                                        <label for="washdish">吃饭</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" id="buyclothes" value="1">
+                                        <label for="buyclothes">睡觉</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" checked="checked" id="throw" value="1">
+                                        <label for="throw">吃饭</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" id="reply" value="1">
+                                        <label for="reply">睡觉</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="ckbox ckbox-default">
+                                        <input type="checkbox" checked="checked" id="throw" value="1">
+                                        <label for="throw">吃饭</label>
+                                        <a href="#" class="pull-right"><i class="fa fa-pencil"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- col-md-4 -->
+
+                    <!--日程安排-->
+                    <div class="col-md-3">
+                        <div class="panel event-list-block">
+                            <div class="cal-day">日程安排</div>
+                            <ul class="event-list">
+                                <li>和川普吃早饭 @ 7:00 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                                <li>商议美国自由女神像的购买事宜 @ 10:00 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                                <li>补一个午饭 @ 15:30 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                                <li>看看风景 @ 16:30 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                                <li>购物 @ 17:45 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                                <li>和奥巴马吃晚饭 @ 19:00 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                                <li>去玩玩 @ 21:30 <a href="#" class="event-close"><i class="fa fa-trash-o"></i></a></li>
+                            </ul>
+                            <input type="text" class="form-control evnt-input" placeholder="NOTES">
+                        </div>
+                    </div>
+
+                    <!--聊天框-->
+                    <div class="col-md-4">
+                        <div class="panel panel-primary-head widget-chat">
+                            <div class="panel-heading">
+                                <div class="pull-right">
+                                    <a title="" data-toggle="tooltip" class="tooltips mr5" href="#" data-original-title="Settings"><i class="glyphicon glyphicon-cog"></i></a>
+                                </div><!-- panel-btns -->
+                                <h3 class="panel-title">Chat</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="chat-conversation">
+                                    <ul class="widget-conversation-list">
+                                        <li class="clearfix">
+                                            <div class="chat-avatar">
+                                                <img class="img-responsive" th:src="@{/emp/picture/user1.png}" alt="female">
+                                                <i>10:00</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>Salma Hayek</i>
+                                                    <p>
+                                                        Hello!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix odd">
+                                            <div class="chat-avatar">
+                                                <img class="img-responsive" th:src="@{/emp/picture/user2.png}" alt="female">
+                                                <i>10:00</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>Lisa Peterson</i>
+                                                    <p>
+                                                        Hi, How are you? What about our next meeting?
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="chat-avatar">
+                                                <img class="img-responsive" th:src="@{/emp/picture/user1.png}" alt="female">
+                                                <i>10:00</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>Salma Hayek</i>
+                                                    <p>
+                                                        Yeah everything is fine
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix odd">
+                                            <div class="chat-avatar">
+                                                <img class="img-responsive" th:src="@{/emp/picture/user4.png}" alt="female">
+                                                <i>10:00</i>
+                                            </div>
+                                            <div class="conversation-text">
+                                                <div class="ctext-wrap">
+                                                    <i>Lisa Peterson</i>
+                                                    <p>
+                                                        Wow that's great
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-xs-9">
+                                            <input type="text" class="form-control chat-input" placeholder="Enter your text">
+                                        </div>
+                                        <div class="col-xs-3 chat-send">
+                                            <button type="submit" class="btn btn-default">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--chat end-->
+                    </div>
+                </div>
+            </div><!-- contentpanel -->
+        </div><!-- mainpanel -->
+    </div><!-- mainwrapper -->
+</section>
+
+<script th:src="@{/emp/js/jquery-1.11.1.min.js}"></script>
+<script th:src="@{/emp/js/jquery-migrate-1.2.1.min.js}"></script>
+<script th:src="@{/emp/js/bootstrap.min.js}"></script>
+<script th:src="@{/emp/js/modernizr.min.js}"></script>
+<script th:src="@{/emp/js/pace.min.js}"></script>
+<script th:src="@{/emp/js/retina.min.js}"></script>
+<script th:src="@{/emp/js/jquery.cookies.js}"></script>
+<script th:src="@{/emp/js/jquery.scrollto.min.js}"></script>
+<script th:src="@{/emp/js/jquery.slimscroll.js}"></script>
+
+<script th:src="@{/emp/js/jquery.flot.min.js}"></script>
+<script th:src="@{/emp/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/emp/js/jquery.flot.spline.min.js}"></script>
+<script th:src="@{/emp/js/jquery.sparkline.min.js}"></script>
+<script th:src="@{/emp/js/morris.min.js}"></script>
+<script th:src="@{/emp/js/raphael-2.1.0.min.js}"></script>
+<script th:src="@{/emp/js/bootstrap-wizard.min.js}"></script>
+<script th:src="@{/emp/js/select2.min.js}"></script>
+<script th:src="@{/emp/js/css3clock.js}"></script>
+<script th:src="@{/emp/js/jquery-ui-1.10.3.min.js}"></script>
+<script th:src="@{/emp/js/moment.min.js}"></script>
+<script th:src="@{/emp/js/fullcalendar.min.js}"></script>
+<script th:src="@{/emp/js/custom.js}"></script>
+<script th:src="@{/emp/js/dashboard.js}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="order by dede58.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <link href='http://fonts.useso.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.useso.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />
+
+    <!-- Styles -->
+    <link rel="stylesheet" th:href="@{/emp/css/font-awesome-login.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/emp/css/bootstrap-login.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/emp/css/style-login.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/emp/css/responsive-login.css}" type="text/css" />
+    <!-- Responsive -->
+<style>
+	input::-webkit-input-placeholder{
+		color: #7be9fe;
+	}
+</style>
+</head>
+
+<body th:style="'background-image: url('+'/emp/picture/login-bg.jpg'+');'">
+
+<div class="login-sec">
+    <div class="login">
+        <div class="login-form">
+            <span><img th:src="@{/emp/picture/logo.png}" alt="" /></span>
+            <h5><strong>员工登陆</strong> Yourself</h5>
+
+           <form th:action="@{/login/empLogin}" method="get" >
+               <p style="color: red" th:text="${passwordMisstake}" th:if="${not #strings.isEmpty(passwordMisstake)}"></p>
+                <fieldset>
+                    <input  type="number" required="required" name="emp_number" id="emp_number" placeholder="员工号" /><i class="fa fa-user"></i>
+                </fieldset>
+                <fieldset>
+                    <input type="password" required="required" name="emp_password" id="emp_password" placeholder="密码" /><i class="fa fa-unlock-alt"></i>
+                </fieldset>
+                <label>
+                    <input type="checkbox" />记住我</label>
+                <button type="submit" class="blue">登陆</button>
+            </form>
+
+
+            <a th:href="@{/forgetPassword1}" title="">忘记密码?</a>
+        </div>
+
+        <span>Copyright © 2020 anmao.online</span>
+    </div>
+</div>
+<!-- Log in Sec -->
+
+</body>
+
+</html>

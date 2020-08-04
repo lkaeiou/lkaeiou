@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yznu.shixun.mapper.personInfoMapper">
+    <!--    员工登录-->
+    <select id="personInfo" parameterType="int" resultType="Personal">
+        select * from personal  where emp_id=#{emp_id}
+    </select>
+    <update id="updatePerInfo" parameterType="Personal" >
+		update personal set
+		    personal_role=#{personal_role},
+		    personal_password=#{personal_password},
+		    personal_self=#{personal_self},
+		    personal_hobbies=#{personal_hobbies},
+            personal_position=#{personal_position},
+            personal_contact=#{personal_contact},
+            personal_department=#{personal_department},
+            personal_age=#{personal_age},
+            card_name=#{card_name},
+            personal_sex=#{personal_sex}
+		where emp_id = #{emp_id}
+	</update>
+    <!-- <resultMap id="login_emp_personal" type="emp">
+         <id column="emp_id" property="emp_id"/>
+         <result column="emp_number" property="emp_number"/>
+         <result column="role_id" property="role_id"/>
+         <result column="department_id" property="department_id"/>
+         <result column="emp_password" property="emp_password"/>
+         <collection property="personalList" ofType="personal">
+             <id column="presonal_id" property="presonal_id"/>
+             <result column="emp_id" property="emp_id"/>
+             <result column="tel_place" property="tel_place"/>
+             <result column="card_name" property="card_name"/>
+             <result column="message_name" property="message_name"/>
+             <result column="personal_password" property="personal_password"/>
+             <result column="personal_sex" property="personal_sex"/>
+             <result column="personal_age" property="personal_age"/>
+             <result column="personal_department" property="personal_department"/>
+             <result column="personal_position" property="personal_position"/>
+             <result column="personal_self" property="personal_self"/>
+             <result column="personal_habbies" property="personal_habbies"/>
+             <result column="personal_contact" property="personal_contact"/>
+             <result column="personal_secret_question" property="personal_secret_question"/>
+             <result column="personal_secret_answer" property="personal_secret_answer"/>
+         </collection>
+     </resultMap>-->
+
+
+</mapper>

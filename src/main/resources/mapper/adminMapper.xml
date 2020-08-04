@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yznu.shixun.mapper.adminMapper">
+    <!--    显示部门-->
+    <select id="showAllDepartment" resultType="department">
+        select * from department
+    </select>
+    <!-- 查询单个部门 -->
+    <select id="findDepartmentBydepartment_id" parameterType="int"
+            resultType="Department">
+        select * from department where department_id = #{department_id}
+    </select>
+    <!--    增加部门-->
+    <insert id="addDepartment" parameterType="Department">
+        insert into
+            department
+            (department_id,department_name,department_self)
+        values
+            (#{department_id},#{department_name},#{department_self})
+    </insert>
+
+    <!-- 修改部门 -->
+    <update id="updateDepartment" parameterType="Department">
+        update department set department_name=#{department_name},department_self = #{department_self} where department_id = #{department_id}
+    </update>
+    <!--    删除部门-->
+    <delete id="deleteDepartment" parameterType="int">
+        delete from  department where department_id=#{department_id}
+    </delete>
+
+    <!--    显示角色-->
+    <select id="showAllRole" resultType="role">
+        select * from role
+    </select>
+    <!-- 查询单个角色 -->
+    <select id="findDepartmentByRole_id" parameterType="int"
+            resultType="Role">
+        select * from role where role_id = #{role_id}
+    </select>
+    <!--    增加角色-->
+    <insert id="addRole" parameterType="Role">
+        insert into
+            role
+            (role_id,role_name)
+        values
+            (#{role_id},#{role_name})
+    </insert>
+
+    <!-- 修改角色 -->
+    <update id="updateRole" parameterType="Role">
+        update role set role_name=#{role_name} where role_id=#{role_id}
+    </update>
+    <!--    删除角色-->
+    <delete id="deleteRole" parameterType="int">
+        delete from  role where role_id=#{role_id}
+    </delete>
+
+    <!-- 根据部门名查询员工 -->
+    <select id="findEmpByDepartment_name" parameterType="String" resultMap="emp_personal1">
+        select
+        emp.*,personal.*
+        from
+        emp,personal,department
+        where
+        department.department_id=emp.department_id
+        and
+        emp.emp_id=personal.emp_id
+        and
+        department_name=#{department_name}
+    </select>
+    <resultMap id="emp_personal1" type="Emp">
+        <id column="emp_id" property="emp_id"/>
+        <result column="emp_number" property="emp_number"/>
+        <result column="role_id" property="role_id"/>
+        <result column="department_id" property="department_id"/>
+        <result column="emp_password" property="emp_password"/>
+        <collection property="personalList" ofType="Personal">
+            <id column="personal_id" property="personal_id"/>
+            <result column="emp_id" property="emp_id"/>
+            <result column="tel_place" property="tel_place"/>
+            <result column="card_name" property="card_name"/>
+            <result column="message_name" property="message_name"/>
+            <result column="personal_password" property="personal_password"/>
+            <result column="personal_sex" property="personal_sex"/>
+            <result column="personal_age" property="personal_age"/>
+            <result column="personal_department" property="personal_department"/>
+            <result column="personal_position" property="personal_position"/>
+            <result column="personal_self" property="personal_self"/>
+            <result column="personal_habbies" property="personal_habbies"/>
+            <result column="personal_contact" property="personal_contact"/>
+            <result column="personal_secret_question" property="personal_secret_question"/>
+            <result column="personal_secret_answer" property="personal_secret_answer"/>
+        </collection>
+    </resultMap>
+
+<!--根据角色名查询员工 -->
+    <select id="findEmpByRole_name" parameterType="String" resultMap="emp_personal2">
+        select
+        emp.*,personal.*
+        from
+        emp,personal,role
+        where
+        role.role_id=emp.role_id
+        and
+        emp.emp_id=personal.emp_id
+        and
+        role_name=#{role_name}
+    </select>
+    <resultMap id="emp_personal2" type="Emp">
+        <id column="emp_id" property="emp_id"/>
+        <result column="emp_number" property="emp_number"/>
+        <result column="role_id" property="role_id"/>
+        <result column="department_id" property="department_id"/>
+        <result column="emp_password" property="emp_password"/>
+        <collection property="personalList" ofType="Personal">
+            <id column="personal_id" property="personal_id"/>
+            <result column="emp_id" property="emp_id"/>
+            <result column="tel_place" property="tel_place"/>
+            <result column="card_name" property="card_name"/>
+            <result column="message_name" property="message_name"/>
+            <result column="personal_password" property="personal_password"/>
+            <result column="personal_sex" property="personal_sex"/>
+            <result column="personal_age" property="personal_age"/>
+            <result column="personal_department" property="personal_department"/>
+            <result column="personal_position" property="personal_position"/>
+            <result column="personal_self" property="personal_self"/>
+            <result column="personal_habbies" property="personal_habbies"/>
+            <result column="personal_contact" property="personal_contact"/>
+            <result column="personal_secret_question" property="personal_secret_question"/>
+            <result column="personal_secret_answer" property="personal_secret_answer"/>
+        </collection>
+    </resultMap>
+
+
+</mapper>

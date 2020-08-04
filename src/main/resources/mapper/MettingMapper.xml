@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yznu.shixun.mapper.MettingMapper">
+    <!--    显示会议-->
+    <select id="showAllMetting" resultType="metting" >
+        select * from metting
+    </select>
+    <!-- 查询单个会议 -->
+    <select id="findDepartmentMetting_id" parameterType="int"
+            resultType="Metting">
+        select * from metting where metting_id = #{metting_id}
+    </select>
+    <!--    预约会议-->
+    <insert id="addMetting" parameterType="Metting" >
+        insert into
+            metting
+            (metting_id,emp_id,metting_room,metting_time,metting_leader)
+        values
+            (#{metting_id},#{emp_id},#{metting_room},#{metting_time},#{metting_leader})
+    </insert>
+
+    <!-- 修改会议 -->
+    <update id="updateMetting"	parameterType="Metting" >
+        update metting set metting_room=#{metting_room},metting_time=#{metting_time},metting_leader=#{metting_leader} where metting_id=#{metting_id}
+    </update>
+    <!--    删除会议-->
+    <delete id="deleteMetting" parameterType="int" >
+        delete  from  metting where metting_id=#{metting_id}
+    </delete>
+</mapper>

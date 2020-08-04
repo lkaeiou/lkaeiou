@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yznu.shixun.mapper.loginMapper">
+    <!--    员工登录-->
+    <select id="login" parameterType="Emp" resultMap="login_emp_personal">
+        select * from emp,personal where emp.emp_id=personal.emp_id and emp_number=#{emp_number} and emp_password=#{emp_password}
+    </select>
+    <resultMap id="login_emp_personal" type="Emp">
+        <id column="emp_id" property="emp_id"/>
+        <result column="emp_number" property="emp_number"/>
+        <result column="role_id" property="role_id"/>
+        <result column="department_id" property="department_id"/>
+        <result column="emp_password" property="emp_password"/>
+        <collection property="personalList" ofType="Personal">
+            <id column="personal_id" property="personal_id"/>
+            <result column="emp_id" property="emp_id"/>
+            <result column="tel_place" property="tel_place"/>
+            <result column="card_name" property="card_name"/>
+            <result column="message_name" property="message_name"/>
+            <result column="personal_password" property="personal_password"/>
+            <result column="personal_sex" property="personal_sex"/>
+            <result column="personal_age" property="personal_age"/>
+            <result column="personal_department" property="personal_department"/>
+            <result column="personal_position" property="personal_position"/>
+            <result column="personal_self" property="personal_self"/>
+            <result column="personal_habbies" property="personal_habbies"/>
+            <result column="personal_contact" property="personal_contact"/>
+            <result column="personal_secret_question" property="personal_secret_question"/>
+            <result column="personal_secret_answer" property="personal_secret_answer"/>
+        </collection>
+    </resultMap>
+
+    <!--    忘记密码,查询出密保问题及答案-->
+    <select id="forgetPassword1" parameterType="Integer" resultType="personal">
+        select personal.* from emp,personal where emp.emp_id=personal.emp_id and emp_number=#{emp_number}
+    </select>
+
+    <!--    忘记密码，修改新密码-->
+    <update id="forgetPassword3" parameterType="Emp">
+        update emp set emp_password=#{emp_password} where emp_id=#{emp_id}
+    </update>
+
+</mapper>

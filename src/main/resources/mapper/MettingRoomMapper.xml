@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yznu.shixun.mapper.MettingRoomMapper">
+    <!--    显示会议室-->
+    <select id="showAllMettingRoom" resultType="mettingroom" >
+        select * from mettingroom
+    </select>
+    <!-- 修改预约状态 -->
+    <update id="updateService"	parameterType="Mettingroom" >
+        update mettingroom set mettingroom_reserve=#{mettingroom_reserve} where metting_id=#{metting_id}
+    </update>
+    <!--<insert id="insert" parameterType="Mettingroom" >
+       insert into metting(metting_id,emp_id,metting_room) values(#{metting_id,#{emp_id},#{metting_room})
+    </insert>-->
+
+    <!--&lt;!&ndash; 查询单个会议 &ndash;&gt;
+    <select id="findDepartmentMetting_id" parameterType="int"
+            resultType="Metting">
+        select * from metting where metting_id = #{metting_id}
+    </select>
+    &lt;!&ndash;    预约会议&ndash;&gt;
+    <insert id="addMetting" parameterType="Metting" >
+        insert into
+            metting
+            (metting_id,emp_id,metting_room,metting_time,metting_leader)
+        values
+            (#{metting_id},#{emp_id},#{metting_room},#{metting_time},#{metting_leader})
+    </insert>
+
+    &lt;!&ndash; 修改会议 &ndash;&gt;
+    <update id="updateMetting"	parameterType="Metting" >
+        update role set metting_room=#{metting_room},metting_time=#{metting_time},metting_leader=#{metting_leader} where metting_id=#{metting_id}
+    </update>
+    &lt;!&ndash;    删除会议&ndash;&gt;
+    <delete id="deleteMetting" parameterType="int" >
+        delete * from  role where metting_id=#{metting_id}
+    </delete>-->
+</mapper>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="order by dede58.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Alpha - Bootstrap Admin Template</title>
+
+    <link th:href="@{/emp/css/style.default.css}" rel="stylesheet">
+    <link th:href="@{/emp/css/jquery.tagsinput.css}" rel="stylesheet" />
+    <link th:href="@{/emp/css/toggles.css}" rel="stylesheet" />
+    <link th:href="@{/emp/css/bootstrap-timepicker.min.css}" rel="stylesheet" />
+    <link th:href="@{/emp/css/select2.css}" rel="stylesheet" />
+    <link th:href="@{/emp/css/colorpicker.css}" rel="stylesheet" />
+    <link th:href="@{/emp/css/dropzone.css}" rel="stylesheet" />
+</head>
+<body STYLE="background-color: #00C6D7">
+
+<div style="padding-left: 600px;padding-top: 200px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">角色修改</h4>
+                </div><!-- panel-heading -->
+
+                <div class="panel-body nopadding">
+
+                    <form class="form-horizontal form-bordered" th:action="@{/admin/updateRole}" method="get">
+
+                        <div class="form-group has-success">
+                            <label class="col-sm-4 control-label">请输入需要修改的角色ID</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="role_id"  class="form-control">
+                            </div>
+                        </div><!-- form-group -->
+
+                        <div class="form-group has-warning">
+                            <label class="col-sm-4 control-label">请输入新的角色名</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="role_name"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div style="padding-left: 350px"><button class="btn btn-primary">确认修改</button></div>
+                        </div>
+
+                    </form>
+                </div><!-- panel-body -->
+            </div><!-- panel -->
+        </div><!-- contentpanel -->
+    </div>
+</div>
+
+<script th:src="@{/emp/js/jquery-1.11.1.min.js}"></script>
+<script th:src="@{/emp/js/jquery-migrate-1.2.1.min.js}"></script>
+<script th:src="@{/emp/js/jquery-ui-1.10.3.min.js}"></script>
+<script th:src="@{/emp/js/bootstrap.min.js}"></script>
+<script th:src="@{/emp/js/modernizr.min.js}"></script>
+<script th:src="@{/emp/js/pace.min.js}"></script>
+<script th:src="@{/emp/js/retina.min.js}"></script>
+<script th:src="@{/emp/js/jquery.cookies.js}"></script>
+<script th:src="@{/emp/js/jquery.autogrow-textarea.js}"></script>
+<script th:src="@{/emp/js/jquery.mousewheel.js}"></script>
+<script th:src="@{/emp/js/jquery.tagsinput.min.js}"></script>
+<script th:src="@{/emp/js/toggles.min.js}"></script>
+<script th:src="@{/emp/js/bootstrap-timepicker.min.js}"></script>
+<script th:src="@{/emp/js/jquery.maskedinput.min.js}"></script>
+<script th:src="@{/emp/js/select2.min.js}"></script>
+<script th:src="@{/emp/js/colorpicker.js}"></script>
+<script th:src="@{/emp/js/dropzone.min.js}"></script>
+<script th:src="@{/emp/js/custom.js}"></script>
+</body>
+</html>
